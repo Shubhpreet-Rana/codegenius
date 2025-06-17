@@ -18,7 +18,7 @@ Choose your preferred installation method:
 
 ### 🌐 One-Line Install (Recommended)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/codegenius/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/main/install.sh | bash
 ```
 **✅ Automatic platform detection, system-wide installation, instant setup**
 
@@ -30,24 +30,24 @@ npm install -g codegenius-cli
 
 ### 🍺 Homebrew (macOS/Linux)
 ```bash
-brew tap yourusername/codegenius
+brew tap Shubhpreet-Rana/codegenius
 brew install codegenius
 ```
 **✅ Native package management, automatic updates**
 
 ### 🔧 Go Install (Developers)
 ```bash
-go install github.com/yourusername/codegenius/cmd@latest
+go install github.com/Shubhpreet-Rana/codegenius/cmd@latest
 ```
 **✅ Build from source, latest features**
 
 ### 💾 Manual Download
 Download the latest release for your platform:
-- [macOS Intel](https://github.com/yourusername/codegenius/releases/latest/download/codegenius-darwin-amd64)
-- [macOS Apple Silicon](https://github.com/yourusername/codegenius/releases/latest/download/codegenius-darwin-arm64)  
-- [Linux x86_64](https://github.com/yourusername/codegenius/releases/latest/download/codegenius-linux-amd64)
-- [Linux ARM64](https://github.com/yourusername/codegenius/releases/latest/download/codegenius-linux-arm64)
-- [Windows x64](https://github.com/yourusername/codegenius/releases/latest/download/codegenius-windows-amd64.exe)
+- [macOS Intel](https://github.com/Shubhpreet-Rana/codegenius/releases/latest/download/codegenius-darwin-amd64)
+- [macOS Apple Silicon](https://github.com/Shubhpreet-Rana/codegenius/releases/latest/download/codegenius-darwin-arm64)  
+- [Linux x86_64](https://github.com/Shubhpreet-Rana/codegenius/releases/latest/download/codegenius-linux-amd64)
+- [Linux ARM64](https://github.com/Shubhpreet-Rana/codegenius/releases/latest/download/codegenius-linux-arm64)
+- [Windows x64](https://github.com/Shubhpreet-Rana/codegenius/releases/latest/download/codegenius-windows-amd64.exe)
 
 Then install:
 ```bash

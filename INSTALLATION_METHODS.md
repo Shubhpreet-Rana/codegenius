@@ -6,7 +6,7 @@ Multiple ways to install CodeGenius CLI for maximum convenience!
 
 ### 🌐 One-Line Curl Install
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/codegenius/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/main/install.sh | bash
 ```
 
 ### 📦 NPM Install

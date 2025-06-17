@@ -6,7 +6,7 @@ Hey! Your friend shared CodeGenius with you - an AI-powered Git assistant that w
 
 ### 🌐 Method 1: One-Line Install (Fastest)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/codegenius/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/main/install.sh | bash
 ```
 **✅ Automatic everything - detects your platform, downloads, installs globally**
 

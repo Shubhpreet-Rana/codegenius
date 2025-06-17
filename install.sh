@@ -14,7 +14,7 @@ PURPLE='\033[0;35m'
 NC='\033[0m' # No Color
 
 # Constants
-REPO_OWNER="yourusername"
+REPO_OWNER="Shubhpreet-Rana"
 REPO_NAME="codegenius"
 BINARY_NAME="codegenius"
 INSTALL_DIR="/usr/local/bin"
