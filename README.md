@@ -12,42 +12,68 @@ An intelligent Git commit message generator and code reviewer powered by AI with
 - **⚙️ Fully Configurable**: Customizable templates, review settings, and project configuration
 - **🌍 Global CLI Tool**: Install once, use anywhere on your system
 
-## 🚀 Quick Install
+## 🚀 Installation Methods
 
-### One-Line Install (Recommended)
+Choose your preferred installation method:
+
+### 🌐 One-Line Install (Recommended)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/codegenius/cli/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/yourusername/codegenius/main/install.sh | bash
 ```
+**✅ Automatic platform detection, system-wide installation, instant setup**
 
-### Alternative Installation Methods
-
-#### Via Go (if you have Go installed)
+### 📦 NPM (Node.js)
 ```bash
-go install github.com/codegenius/cli/cmd@latest
+npm install -g codegenius-cli
 ```
+**✅ Easy updates, clean uninstall, works everywhere Node.js does**
 
-#### Via Homebrew (macOS/Linux)
+### 🍺 Homebrew (macOS/Linux)
 ```bash
-# Coming soon
-brew install codegenius/tap/codegenius
+brew tap yourusername/codegenius
+brew install codegenius
 ```
+**✅ Native package management, automatic updates**
 
-#### Manual Download
-1. Download the latest release for your platform from [GitHub Releases](https://github.com/codegenius/cli/releases)
-2. Extract and move to your PATH:
+### 🔧 Go Install (Developers)
+```bash
+go install github.com/yourusername/codegenius/cmd@latest
+```
+**✅ Build from source, latest features**
+
+### 💾 Manual Download
+Download the latest release for your platform:
+- [macOS Intel](https://github.com/yourusername/codegenius/releases/latest/download/codegenius-darwin-amd64)
+- [macOS Apple Silicon](https://github.com/yourusername/codegenius/releases/latest/download/codegenius-darwin-arm64)  
+- [Linux x86_64](https://github.com/yourusername/codegenius/releases/latest/download/codegenius-linux-amd64)
+- [Linux ARM64](https://github.com/yourusername/codegenius/releases/latest/download/codegenius-linux-arm64)
+- [Windows x64](https://github.com/yourusername/codegenius/releases/latest/download/codegenius-windows-amd64.exe)
+
+Then install:
 ```bash
 # macOS/Linux
-sudo mv codegenius /usr/local/bin/
+chmod +x codegenius-*
+sudo mv codegenius-* /usr/local/bin/codegenius
 
-# Or to user directory (add to PATH)
-mv codegenius ~/.local/bin/
+# Windows: Move .exe to a folder in your PATH
 ```
+
+### 📋 All Platforms Supported
+| Platform | Curl | NPM | Homebrew | Go | Manual |
+|----------|------|-----|----------|----|----|
+| **macOS Intel** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **macOS ARM64** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Linux x64** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Linux ARM64** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Windows** | ✅ | ✅ | ❌ | ✅ | ✅ |
+
+**💡 See [INSTALLATION_METHODS.md](INSTALLATION_METHODS.md) for detailed instructions**
 
 ## ⚡ Quick Start
 
 ### 1. Setup (One-time)
 ```bash
-# Set your Gemini API key
+# Get your API key from: https://makersuite.google.com/app/apikey
 export GEMINI_API_KEY="your-gemini-api-key"
 
 # Add to your shell profile

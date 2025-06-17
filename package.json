@@ -1,0 +1,59 @@
+{
+  "name": "codegenius-cli",
+  "version": "1.0.0",
+  "description": "AI-powered Git commit message generator and code reviewer with beautiful terminal UI",
+  "main": "lib/index.js",
+  "bin": {
+    "codegenius": "./bin/codegenius.js"
+  },
+  "scripts": {
+    "postinstall": "node scripts/install.js",
+    "preuninstall": "node scripts/uninstall.js",
+    "test": "echo \"Use: codegenius --help\" && exit 0"
+  },
+  "keywords": [
+    "git",
+    "ai",
+    "commit",
+    "cli",
+    "code-review",
+    "gemini",
+    "automation",
+    "developer-tools",
+    "terminal-ui",
+    "tui"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/codegenius#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/codegenius.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/codegenius/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
+  "files": [
+    "bin/",
+    "lib/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ],
+  "preferGlobal": true,
+  "publishConfig": {
+    "access": "public"
+  }
+} 

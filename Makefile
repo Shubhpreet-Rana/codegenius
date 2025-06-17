@@ -1,5 +1,5 @@
 # CodeGenius CLI Makefile
-.PHONY: build install clean test lint fmt help tui demo dev-setup quick-commit build-all release dist
+.PHONY: build install clean test lint fmt help tui demo dev-setup quick-commit build-all release dist npm-prepare npm-pack npm-publish npm-test homebrew-update
 
 # Variables
 BINARY_NAME=codegenius
@@ -218,4 +218,32 @@ help:
 	@echo "  codegenius --help       # Global help"
 	@echo ""
 	@echo "💡 For users: Use the one-line installer:"
-	@echo "  curl -fsSL https://raw.githubusercontent.com/codegenius/cli/main/install.sh | bash" 
+	@echo "  curl -fsSL https://raw.githubusercontent.com/codegenius/cli/main/install.sh | bash"
+
+# NPM packaging targets
+npm-prepare: dist
+	@echo "📦 Preparing NPM package..."
+	mkdir -p lib/bin
+	cp dist/* lib/bin/ 2>/dev/null || true
+	chmod +x bin/codegenius.js
+	chmod +x scripts/*.js
+
+npm-pack: npm-prepare
+	@echo "📦 Creating NPM package..."
+	npm pack
+	@echo "✅ NPM package created!"
+
+npm-publish: npm-prepare
+	@echo "🚀 Publishing to NPM..."
+	npm publish --access public
+	@echo "✅ Published to NPM!"
+
+npm-test:
+	@echo "🧪 Testing NPM package..."
+	npm test
+
+# Homebrew formula update
+homebrew-update:
+	@echo "🍺 Updating Homebrew formula..."
+	@echo "⚠️  Remember to update SHA256 hashes in Formula/codegenius.rb"
+	@echo "   Get hashes with: shasum -a 256 dist/*" 
