@@ -1,0 +1,37 @@
+project:
+  name: ""
+  language: go
+  overview: ""
+  scopes:
+  - core
+  - api
+  - docs
+  - deps
+  - scripts
+  - ci
+  - build
+  standards: ""
+  ignore_files:
+  - go.mod
+  - go.sum
+  - '*.lock'
+  - node_modules/
+  - .git/
+ai:
+  model: gemini-2.0-flash
+  context_templates:
+    bugfix: Focus on describing the bug that was fixed and its impact.
+    default: This is a standard commit message generation request.
+    feature: Emphasize the new functionality and its benefits to users.
+  max_tokens: 4000
+review:
+  enabled_types:
+  - security
+  - performance
+  - style
+  - structure
+  security_patterns:
+  - (?i)(password|secret|key|token)\s*[:=]\s*['""][^'""]+[''""]
+  - (?i)api[_-]?key\s*[:=]\s*['""][^'""]+[''""]
+  - (?i)(auth|bearer)\s*[:=]\s*['""][^'""]+[''""]
+  custom_rules: {}

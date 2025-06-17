@@ -1,0 +1,48 @@
+project:
+  name: "My Awesome Project"
+  language: "go"
+  overview: "A CLI tool for intelligent Git commit message generation and code review"
+  scopes:
+    - "core"
+    - "api" 
+    - "docs"
+    - "deps"
+    - "scripts"
+    - "ci"
+    - "build"
+    - "ui"
+    - "tests"
+  standards: "Follow Go best practices and conventional commits specification"
+  ignore_files:
+    - "go.mod"
+    - "go.sum"
+    - "*.lock"
+    - "node_modules/"
+    - ".git/"
+    - "vendor/"
+
+ai:
+  model: "gemini-2.0-flash"
+  max_tokens: 4000
+  context_templates:
+    default: "Generate a standard commit message following our project conventions."
+    bugfix: "Focus on describing the bug that was fixed, its impact, and the solution implemented."
+    feature: "Emphasize the new functionality, its benefits to users, and any breaking changes."
+    refactor: "Highlight the structural improvements and why the refactoring was necessary."
+    docs: "Focus on what documentation was added or improved and why it's valuable."
+
+review:
+  enabled_types:
+    - "security"
+    - "performance" 
+    - "style"
+    - "structure"
+  security_patterns:
+    - '(?i)(password|secret|key|token)\s*[:=]\s*['""][^'""]+[''""]'
+    - '(?i)api[_-]?key\s*[:=]\s*['""][^'""]+[''""]'
+    - '(?i)(auth|bearer)\s*[:=]\s*['""][^'""]+[''""]'
+    - '(?i)(private|secret).*[:=]\s*['""][^'""]+[''""]'
+  custom_rules:
+    no_hardcoded_urls: "Avoid hardcoded URLs in production code"
+    consistent_error_handling: "Use consistent error handling patterns"
+    proper_logging: "Ensure proper logging levels and structured logging" 
