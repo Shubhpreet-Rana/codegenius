@@ -210,7 +210,7 @@ async function install() {
         log('🔧 Troubleshooting:', 'yellow');
         log('1. Check your internet connection', 'reset');
         log('2. Try again: npm uninstall -g codegenius-cli && npm install -g codegenius-cli', 'reset');
-        log('3. Report issues: https://github.com/yourusername/codegenius/issues', 'reset');
+        log('3. Report issues: https://github.com/Shubhpreet-Rana/codegenius/issues', 'reset');
         
         process.exit(1);
     }

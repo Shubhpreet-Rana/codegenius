@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # CodeGenius CLI Installer
-# Usage: curl -fsSL https://raw.githubusercontent.com/yourusername/codegenius/main/install.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/main/install.sh | bash
 
 set -e
 
