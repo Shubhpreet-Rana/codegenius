@@ -249,9 +249,10 @@ main() {
     if command -v "$BINARY_NAME" >/dev/null 2>&1; then
         local current_location=$(which $BINARY_NAME)
         print_warning "CodeGenius is already installed at $current_location"
-        read -p "Do you want to update it? (y/N): " -n 1 -r
+        printf "Do you want to update it? (y/N): "
+        read -r reply </dev/tty
         echo
-        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        if [[ ! $reply =~ ^[Yy]$ ]]; then
             print_step "Installation cancelled."
             exit 0
         fi
@@ -262,12 +263,16 @@ main() {
         print_step "Go detected. Choose installation method:"
         echo "1) Install via Go (recommended for developers)"
         echo "2) Install pre-built binary"
-        read -p "Choice (1 or 2): " -n 1 -r
+        printf "Choice (1 or 2): "
+        read -r choice </dev/tty
         echo
-        if [[ $REPLY == "1" ]]; then
+        if [[ $choice == "1" ]]; then
             install_via_go
-        else
+        elif [[ $choice == "2" ]]; then
             install_via_binary
+        else
+            print_warning "Invalid choice. Defaulting to Go installation..."
+            install_via_go
         fi
     else
         print_step "Installing pre-built binary..."
