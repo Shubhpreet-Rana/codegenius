@@ -1,20 +1,20 @@
 class Codegenius < Formula
   desc "AI-powered Git commit message generator and code reviewer with beautiful terminal UI"
-  homepage "https://github.com/yourusername/codegenius"
-  version "1.0.0"
+  homepage "https://github.com/Shubhpreet-Rana/codegenius"
+  version "1.1.1"
   license "MIT"
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/yourusername/codegenius/releases/download/v#{version}/codegenius-darwin-amd64"
+    url "https://github.com/Shubhpreet-Rana/codegenius/releases/download/v#{version}/codegenius-darwin-amd64"
     sha256 "your-sha256-hash-here"  # Update this with actual hash
   elsif OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/yourusername/codegenius/releases/download/v#{version}/codegenius-darwin-arm64"
+    url "https://github.com/Shubhpreet-Rana/codegenius/releases/download/v#{version}/codegenius-darwin-arm64"
     sha256 "your-sha256-hash-here"  # Update this with actual hash
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/yourusername/codegenius/releases/download/v#{version}/codegenius-linux-amd64"
+    url "https://github.com/Shubhpreet-Rana/codegenius/releases/download/v#{version}/codegenius-linux-amd64"
     sha256 "your-sha256-hash-here"  # Update this with actual hash
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/yourusername/codegenius/releases/download/v#{version}/codegenius-linux-arm64"
+    url "https://github.com/Shubhpreet-Rana/codegenius/releases/download/v#{version}/codegenius-linux-arm64"
     sha256 "your-sha256-hash-here"  # Update this with actual hash
   end
 
@@ -41,7 +41,7 @@ class Codegenius < Formula
          codegenius --tui      # Beautiful interface  
          codegenius --review   # Code review
 
-      🔗 Documentation: https://github.com/yourusername/codegenius#readme
+      🔗 Documentation: https://github.com/Shubhpreet-Rana/codegenius#readme
     EOS
   end
 

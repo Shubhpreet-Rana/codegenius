@@ -15,7 +15,7 @@ const { pipeline } = require('stream');
 const streamPipeline = promisify(pipeline);
 
 // Configuration
-const REPO_OWNER = 'yourusername';
+const REPO_OWNER = 'Shubhpreet-Rana';
 const REPO_NAME = 'codegenius';
 const GITHUB_API = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}`;
 

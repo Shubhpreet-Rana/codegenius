@@ -1,6 +1,6 @@
 {
   "name": "codegenius-cli",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "AI-powered Git commit message generator and code reviewer with beautiful terminal UI",
   "main": "lib/index.js",
   "bin": {
@@ -23,15 +23,15 @@
     "terminal-ui",
     "tui"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Shubhpreet Rana",
   "license": "MIT",
-  "homepage": "https://github.com/yourusername/codegenius#readme",
+  "homepage": "https://github.com/Shubhpreet-Rana/codegenius#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/codegenius.git"
+    "url": "git+https://github.com/Shubhpreet-Rana/codegenius.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/codegenius/issues"
+    "url": "https://github.com/Shubhpreet-Rana/codegenius/issues"
   },
   "engines": {
     "node": ">=14.0.0"
