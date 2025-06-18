@@ -183,16 +183,36 @@ install_via_binary() {
 verify_installation() {
     print_step "Verifying installation..."
     
+    # First check if it's in PATH
     if command -v "$BINARY_NAME" >/dev/null 2>&1; then
         local version_output=$("$BINARY_NAME" --help 2>/dev/null | head -1 || echo "CodeGenius CLI")
         print_success "CodeGenius is installed and working!"
         print_step "Version: $version_output"
         print_step "Location: $(which $BINARY_NAME)"
         return 0
-    else
-        print_error "Installation verification failed"
-        return 1
     fi
+    
+    # If not in PATH, check Go bin directory
+    local gobin=""
+    if [ -n "$GOBIN" ]; then
+        gobin="$GOBIN"
+    elif [ -n "$GOPATH" ]; then
+        gobin="$GOPATH/bin"
+    else
+        gobin="$(go env GOPATH)/bin"
+    fi
+    
+    if [ -f "$gobin/$BINARY_NAME" ]; then
+        local version_output=$("$gobin/$BINARY_NAME" --help 2>/dev/null | head -1 || echo "CodeGenius CLI")
+        print_success "CodeGenius is installed and working!"
+        print_step "Version: $version_output"
+        print_step "Location: $gobin/$BINARY_NAME"
+        print_warning "Note: $gobin is not in your PATH. Add it for global access."
+        return 0
+    fi
+    
+    print_error "Installation verification failed"
+    return 1
 }
 
 # Setup instructions
