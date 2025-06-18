@@ -238,8 +238,7 @@ main() {
     fi
     
     # Choose installation method
-    #if check_go && [ "${FORCE_BINARY:-}" != "true" ]; then
-    if false; then 
+    if check_go && [ "${FORCE_BINARY:-}" != "true" ]; then
         print_step "Go detected. Choose installation method:"
         echo "1) Install via Go (recommended for developers)"
         echo "2) Install pre-built binary"
