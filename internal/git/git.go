@@ -6,7 +6,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/codegenius/cli/internal/interfaces"
+	"github.com/Shubhpreet-Rana/codegenius/internal/interfaces"
 )
 
 // Repository implements the GitRepository interface

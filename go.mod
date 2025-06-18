@@ -1,4 +1,4 @@
-module github.com/codegenius/cli
+module github.com/Shubhpreet-Rana/codegenius
 
 go 1.21
 

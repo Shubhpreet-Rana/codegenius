@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/Shubhpreet-Rana/codegenius/internal/interfaces"
 	"github.com/charmbracelet/huh"
 	"github.com/charmbracelet/lipgloss"
-	"github.com/codegenius/cli/internal/interfaces"
 )
 
 // Styles for the TUI

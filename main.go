@@ -6,14 +6,14 @@ import (
 	"log"
 	"strings"
 
-	"github.com/codegenius/cli/internal/ai"
-	"github.com/codegenius/cli/internal/config"
-	"github.com/codegenius/cli/internal/container"
-	"github.com/codegenius/cli/internal/git"
-	"github.com/codegenius/cli/internal/history"
-	"github.com/codegenius/cli/internal/interfaces"
-	"github.com/codegenius/cli/internal/review"
-	"github.com/codegenius/cli/internal/tui"
+	"github.com/Shubhpreet-Rana/codegenius/internal/ai"
+	"github.com/Shubhpreet-Rana/codegenius/internal/config"
+	"github.com/Shubhpreet-Rana/codegenius/internal/container"
+	"github.com/Shubhpreet-Rana/codegenius/internal/git"
+	"github.com/Shubhpreet-Rana/codegenius/internal/history"
+	"github.com/Shubhpreet-Rana/codegenius/internal/interfaces"
+	"github.com/Shubhpreet-Rana/codegenius/internal/review"
+	"github.com/Shubhpreet-Rana/codegenius/internal/tui"
 )
 
 func main() {
@@ -110,7 +110,7 @@ SETUP:
     4. Stage your changes: git add .
     5. Run: codegenius --tui
 
-For more information, visit: https://github.com/codegenius/cli`)
+For more information, visit: https://github.com/Shubhpreet-Rana/codegenius`)
 }
 
 // handleTUIMode runs the beautiful terminal user interface

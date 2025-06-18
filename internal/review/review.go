@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/codegenius/cli/internal/interfaces"
+	"github.com/Shubhpreet-Rana/codegenius/internal/interfaces"
 )
 
 // Reviewer implements the CodeReviewer interface

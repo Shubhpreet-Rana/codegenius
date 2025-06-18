@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/codegenius/cli/internal/interfaces"
+	"github.com/Shubhpreet-Rana/codegenius/internal/interfaces"
 	"gopkg.in/yaml.v2"
 )
 

@@ -5,8 +5,7 @@
 BINARY_NAME=codegenius
 BUILD_DIR=bin
 DIST_DIR=dist
-CMD_DIR=cmd
-MAIN_FILE=$(CMD_DIR)/main.go
+MAIN_FILE=main.go
 VERSION?=$(shell git describe --tags --always --dirty)
 LDFLAGS=-ldflags "-s -w -X main.version=$(VERSION)"
 
@@ -80,7 +79,7 @@ install: build
 # Install via Go (for users)
 go-install:
 	@echo "📥 Installing $(BINARY_NAME) via go install..."
-	@go install github.com/codegenius/cli/cmd@latest
+	@go install github.com/Shubhpreet-Rana/codegenius@latest
 	@echo "✅ Installation complete via Go modules"
 
 # Uninstall the application
@@ -218,7 +217,7 @@ help:
 	@echo "  codegenius --help       # Global help"
 	@echo ""
 	@echo "💡 For users: Use the one-line installer:"
-	@echo "  curl -fsSL https://raw.githubusercontent.com/codegenius/cli/main/install.sh | bash"
+	@echo "  curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/main/install.sh | bash"
 
 # NPM packaging targets
 npm-prepare: dist

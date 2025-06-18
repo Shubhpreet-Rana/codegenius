@@ -109,7 +109,7 @@ check_go() {
 install_via_go() {
     print_step "Installing CodeGenius via Go..."
     
-    go install github.com/${REPO_OWNER}/${REPO_NAME}/cmd@latest
+    go install github.com/${REPO_OWNER}/${REPO_NAME}@latest
     
     local gobin=""
     if [ -n "$GOBIN" ]; then

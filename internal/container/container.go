@@ -3,7 +3,7 @@ package container
 import (
 	"fmt"
 
-	"github.com/codegenius/cli/internal/interfaces"
+	"github.com/Shubhpreet-Rana/codegenius/internal/interfaces"
 )
 
 // Container implements dependency injection for the application

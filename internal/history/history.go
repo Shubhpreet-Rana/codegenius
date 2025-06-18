@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/codegenius/cli/internal/interfaces"
+	"github.com/Shubhpreet-Rana/codegenius/internal/interfaces"
 )
 
 const (
