@@ -241,6 +241,25 @@ show_setup_instructions() {
     echo ""
 }
 
+# Check if running interactively
+is_interactive() {
+    [ -t 0 ] && [ -t 1 ] && [ -t 2 ]
+}
+
+# Get user input with fallback
+get_user_input() {
+    local prompt="$1"
+    local default="$2"
+    
+    if is_interactive; then
+        printf "%s" "$prompt"
+        read -r input </dev/tty
+        echo "$input"
+    else
+        echo "$default"
+    fi
+}
+
 # Main installation flow
 main() {
     print_header
@@ -249,12 +268,16 @@ main() {
     if command -v "$BINARY_NAME" >/dev/null 2>&1; then
         local current_location=$(which $BINARY_NAME)
         print_warning "CodeGenius is already installed at $current_location"
-        printf "Do you want to update it? (y/N): "
-        read -r reply </dev/tty
-        echo
-        if [[ ! $reply =~ ^[Yy]$ ]]; then
-            print_step "Installation cancelled."
-            exit 0
+        
+        if is_interactive; then
+            local reply=$(get_user_input "Do you want to update it? (y/N): " "n")
+            echo
+            if [[ ! $reply =~ ^[Yy]$ ]]; then
+                print_step "Installation cancelled."
+                exit 0
+            fi
+        else
+            print_step "Non-interactive mode: Proceeding with update..."
         fi
     fi
     
@@ -263,15 +286,20 @@ main() {
         print_step "Go detected. Choose installation method:"
         echo "1) Install via Go (recommended for developers)"
         echo "2) Install pre-built binary"
-        printf "Choice (1 or 2): "
-        read -r choice </dev/tty
-        echo
-        if [[ $choice == "1" ]]; then
-            install_via_go
-        elif [[ $choice == "2" ]]; then
-            install_via_binary
+        
+        if is_interactive; then
+            local choice=$(get_user_input "Choice (1 or 2): " "1")
+            echo
+            if [[ $choice == "1" ]]; then
+                install_via_go
+            elif [[ $choice == "2" ]]; then
+                install_via_binary
+            else
+                print_warning "Invalid choice. Defaulting to Go installation..."
+                install_via_go
+            fi
         else
-            print_warning "Invalid choice. Defaulting to Go installation..."
+            print_step "Non-interactive mode: Defaulting to Go installation..."
             install_via_go
         fi
     else
