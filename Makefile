@@ -217,7 +217,7 @@ help:
 	@echo "  codegenius --help       # Global help"
 	@echo ""
 	@echo "💡 For users: Use the one-line installer:"
-	@echo "  curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/main/install.sh | bash"
+	@echo "  curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/latest/install.sh | bash"
 
 # NPM packaging targets
 npm-prepare: dist

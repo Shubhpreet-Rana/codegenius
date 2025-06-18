@@ -6,7 +6,7 @@
 
 #### 1. **One-Line Curl Installer (✅ LIVE)**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/latest/install.sh | bash
 ```
 - **Status**: ✅ Live and working
 - **Features**: Auto-detects Go, offers choice between Go install and binary download
@@ -66,7 +66,7 @@ brew install codegenius
 ## 🎯 **Current Working Installation Methods**
 
 ### **Immediate Use (No Setup Required)**
-1. **Curl installer**: `curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/main/install.sh | bash`
+1. **Curl installer**: `curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/latest/install.sh | bash`
 2. **Go install**: `go install github.com/Shubhpreet-Rana/codegenius@latest`
 
 ### **Ready to Deploy**
@@ -100,7 +100,7 @@ The following methods are **confirmed working**:
 
 ✅ **Curl Installer**
 ```bash
-$ curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/main/install.sh | bash
+$ curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/latest/install.sh | bash
 [SUCCESS] CodeGenius is installed and working!
 [INFO] Location: /Users/apple/go/bin/codegenius
 ```
