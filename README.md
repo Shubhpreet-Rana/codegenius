@@ -16,7 +16,23 @@ An intelligent Git commit message generator and code reviewer powered by AI with
 
 Choose your preferred installation method:
 
-### 🌐 One-Line Install (Recommended)
+### 🍺 Homebrew (macOS/Linux) - ✅ Available Now!
+```bash
+# Add the tap
+brew tap Shubhpreet-Rana/codegenius
+
+# Install CodeGenius
+brew install codegenius
+```
+**✅ Clean installation, automatic updates, easy uninstall**
+
+### 📦 NPM (Node.js) - ✅ Published!
+```bash
+npm install -g codegenius-cli
+```
+**✅ Easy updates, clean uninstall, works everywhere Node.js does**
+
+### 🌐 One-Line Install (Alternative)
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/latest/install.sh | bash
 ```
@@ -27,19 +43,6 @@ curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/latest/i
 go install github.com/Shubhpreet-Rana/codegenius@latest
 ```
 **✅ Build from source, latest features, automatic updates**
-
-### 📦 NPM (Node.js)
-```bash
-npm install -g codegenius-cli
-```
-**✅ Easy updates, clean uninstall, works everywhere Node.js does**
-
-### 🍺 Homebrew (macOS/Linux) - Coming Soon
-```bash
-# Homebrew tap setup in progress
-# For now, use the curl installer above
-```
-**🚧 Will be available once tap is configured**
 
 ### 💾 Manual Download
 Download the latest release for your platform:
@@ -59,15 +62,15 @@ sudo mv codegenius-* /usr/local/bin/codegenius
 ```
 
 ### 📋 Platform Support
-| Platform | Curl | Go | NPM | Manual |
-|----------|------|----|----|--------|
-| **macOS Intel** | ✅ | ✅ | ✅ | ✅ |
-| **macOS ARM64** | ✅ | ✅ | ✅ | ✅ |
-| **Linux x64** | ✅ | ✅ | ✅ | ✅ |
-| **Linux ARM64** | ✅ | ✅ | ✅ | ✅ |
-| **Windows** | ✅ | ✅ | ✅ | ✅ |
+| Platform | Homebrew | NPM | Curl | Go | Manual |
+|----------|----------|-----|------|----|--------|
+| **macOS Intel** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **macOS ARM64** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Linux x64** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Linux ARM64** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Windows** | ❌ | ✅ | ✅ | ✅ | ✅ |
 
-**💡 Recommended: Use the curl installer for the best experience**
+**💡 Recommended: Use Homebrew on macOS/Linux or NPM for cross-platform**
 
 ## ⚡ Quick Start
 
@@ -182,8 +185,7 @@ CodeGenius is designed to work seamlessly across your entire system:
 
 ```
 CLI_GO/
-├── cmd/
-│   └── main.go              # Global CLI entry point
+├── main.go                  # Global CLI entry point
 ├── internal/
 │   ├── tui/                 # Beautiful terminal UI
 │   ├── interfaces/          # Clean architecture
@@ -246,7 +248,7 @@ review:
 ### For Contributors
 ```bash
 # Clone and setup
-git clone https://github.com/codegenius/cli.git
+git clone https://github.com/Shubhpreet-Rana/codegenius.git
 cd CLI_GO
 make dev-setup
 
@@ -294,17 +296,18 @@ codegenius --review > review-report.txt
 
 CodeGenius is distributed through multiple channels:
 
+- **Homebrew**: `brew tap Shubhpreet-Rana/codegenius && brew install codegenius`
+- **NPM**: `npm install -g codegenius-cli`
 - **GitHub Releases**: Pre-built binaries for all platforms
-- **Go Modules**: `go install github.com/codegenius/cli/cmd@latest`
-- **Homebrew**: `brew install codegenius` (coming soon)
-- **Package Managers**: APT, YUM, Chocolatey (planned)
+- **Go Modules**: `go install github.com/Shubhpreet-Rana/codegenius@latest`
+- **Curl Installer**: One-line installation script
 
 ## 🔧 API Integration
 
 Other applications can integrate CodeGenius:
 
 ```go
-import "github.com/codegenius/cli/internal/interfaces"
+import "github.com/Shubhpreet-Rana/codegenius/internal/interfaces"
 
 // Use as a library
 service := buildCodeGeniusService()
@@ -331,6 +334,14 @@ message, err := service.AI.GenerateCommitMessage(diff, files, branch, context)
 - **Secure API**: Uses HTTPS for all AI communications
 - **Local History**: Work history stored locally
 - **Configurable**: Control what data is sent to AI
+
+## 🎉 What's New in v1.1.2
+
+- **✅ Homebrew Support**: Official Homebrew tap available
+- **🔐 Verified Binaries**: All releases signed and verified
+- **🛠️ Enhanced Installation**: Multiple installation methods
+- **📦 GitHub Releases**: Pre-built binaries for all platforms
+- **🔄 Automatic Updates**: Easy updates via package managers
 
 ## 📄 License
 
