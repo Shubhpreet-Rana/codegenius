@@ -18,9 +18,15 @@ Choose your preferred installation method:
 
 ### 🌐 One-Line Install (Recommended)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/latest/install.sh | bash
 ```
-**✅ Automatic platform detection, system-wide installation, instant setup**
+**✅ Automatic platform detection, PATH setup, instant global access**
+
+### 🔧 Go Install (Developers)
+```bash
+go install github.com/Shubhpreet-Rana/codegenius@latest
+```
+**✅ Build from source, latest features, automatic updates**
 
 ### 📦 NPM (Node.js)
 ```bash
@@ -28,18 +34,12 @@ npm install -g codegenius-cli
 ```
 **✅ Easy updates, clean uninstall, works everywhere Node.js does**
 
-### 🍺 Homebrew (macOS/Linux)
+### 🍺 Homebrew (macOS/Linux) - Coming Soon
 ```bash
-brew tap Shubhpreet-Rana/codegenius
-brew install codegenius
+# Homebrew tap setup in progress
+# For now, use the curl installer above
 ```
-**✅ Native package management, automatic updates**
-
-### 🔧 Go Install (Developers)
-```bash
-go install github.com/Shubhpreet-Rana/codegenius/cmd@latest
-```
-**✅ Build from source, latest features**
+**🚧 Will be available once tap is configured**
 
 ### 💾 Manual Download
 Download the latest release for your platform:
@@ -58,16 +58,16 @@ sudo mv codegenius-* /usr/local/bin/codegenius
 # Windows: Move .exe to a folder in your PATH
 ```
 
-### 📋 All Platforms Supported
-| Platform | Curl | NPM | Homebrew | Go | Manual |
-|----------|------|-----|----------|----|----|
-| **macOS Intel** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **macOS ARM64** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Linux x64** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Linux ARM64** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Windows** | ✅ | ✅ | ❌ | ✅ | ✅ |
+### 📋 Platform Support
+| Platform | Curl | Go | NPM | Manual |
+|----------|------|----|----|--------|
+| **macOS Intel** | ✅ | ✅ | ✅ | ✅ |
+| **macOS ARM64** | ✅ | ✅ | ✅ | ✅ |
+| **Linux x64** | ✅ | ✅ | ✅ | ✅ |
+| **Linux ARM64** | ✅ | ✅ | ✅ | ✅ |
+| **Windows** | ✅ | ✅ | ✅ | ✅ |
 
-**💡 See [INSTALLATION_METHODS.md](INSTALLATION_METHODS.md) for detailed instructions**
+**💡 Recommended: Use the curl installer for the best experience**
 
 ## ⚡ Quick Start
 
