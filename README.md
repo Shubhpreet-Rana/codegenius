@@ -12,6 +12,17 @@ An intelligent Git commit message generator and code reviewer powered by AI with
 - **⚙️ Fully Configurable**: Customizable templates, review settings, and project configuration
 - **🌍 Global CLI Tool**: Install once, use anywhere on your system
 
+## 🚀 **Installation Status - All Methods Working!**
+
+| Method | Status | Version | One-Line Install |
+|--------|--------|---------|------------------|
+| **🍺 Homebrew** | ✅ **Working** | v1.1.2 | `brew tap Shubhpreet-Rana/codegenius && brew install codegenius` |
+| **📦 NPM** | ✅ **Working** | v1.1.4 | `npm install -g codegenius-cli` |
+| **🌐 Curl** | ✅ **Working** | v1.1.2 | `curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/latest/install.sh \| bash` |
+| **🔧 Go** | ✅ **Working** | Latest | `go install github.com/Shubhpreet-Rana/codegenius@latest` |
+
+**Choose your preferred method and get started in seconds! 🚀**
+
 ## 🚀 Installation Methods
 
 Choose your preferred installation method:
@@ -296,11 +307,11 @@ codegenius --review > review-report.txt
 
 CodeGenius is distributed through multiple channels:
 
-- **Homebrew**: `brew tap Shubhpreet-Rana/codegenius && brew install codegenius`
-- **NPM**: `npm install -g codegenius-cli`
-- **GitHub Releases**: Pre-built binaries for all platforms
+- **Homebrew**: `brew tap Shubhpreet-Rana/codegenius && brew install codegenius` (v1.1.2)
+- **NPM**: `npm install -g codegenius-cli` (v1.1.4)
+- **GitHub Releases**: Pre-built binaries for all platforms (v1.1.2)
 - **Go Modules**: `go install github.com/Shubhpreet-Rana/codegenius@latest`
-- **Curl Installer**: One-line installation script
+- **Curl Installer**: One-line installation script (v1.1.2)
 
 ## 🔧 API Integration
 
@@ -335,12 +346,13 @@ message, err := service.AI.GenerateCommitMessage(diff, files, branch, context)
 - **Local History**: Work history stored locally
 - **Configurable**: Control what data is sent to AI
 
-## 🎉 What's New in v1.1.2
+## 🎉 What's New in v1.1.4
 
-- **✅ Homebrew Support**: Official Homebrew tap available
-- **🔐 Verified Binaries**: All releases signed and verified
-- **🛠️ Enhanced Installation**: Multiple installation methods
-- **📦 GitHub Releases**: Pre-built binaries for all platforms
+- **✅ NPM Package Fixed**: All installation issues resolved in `codegenius-cli@1.1.4`
+- **✅ Homebrew Support**: Official Homebrew tap available and working
+- **🔐 Verified Binaries**: All releases signed and verified with real SHA256 hashes
+- **🛠️ Enhanced Installation**: Multiple working installation methods
+- **📦 GitHub Releases**: Pre-built binaries for all platforms (v1.1.2)
 - **🔄 Automatic Updates**: Easy updates via package managers
 
 ## 📄 License
