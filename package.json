@@ -1,6 +1,6 @@
 {
   "name": "codegenius-cli",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "AI-powered Git commit message generator and code reviewer with beautiful terminal UI",
   "main": "lib/index.js",
   "bin": {

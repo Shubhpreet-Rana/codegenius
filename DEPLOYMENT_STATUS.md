@@ -1,6 +1,6 @@
 # 🚀 CodeGenius CLI - Deployment Status
 
-## ✅ **Successfully Deployed - v1.1.1**
+## ✅ **Successfully Deployed - v1.1.2**
 
 ### 📦 **Available Installation Methods**
 
@@ -11,13 +11,14 @@ curl -fsSL https://raw.githubusercontent.com/Shubhpreet-Rana/codegenius/latest/i
 - **Status**: ✅ Live and working
 - **Features**: Auto-detects Go, offers choice between Go install and binary download
 - **Verification**: Improved to check Go bin directory when not in PATH
+- **PATH Setup**: Automatically adds Go bin to shell profile for global access
 
 #### 2. **Go Install (✅ LIVE)**
 ```bash
 go install github.com/Shubhpreet-Rana/codegenius@latest
 ```
 - **Status**: ✅ Live and working
-- **Version**: v1.1.1
+- **Version**: v1.1.2
 - **Module Path**: `github.com/Shubhpreet-Rana/codegenius`
 
 #### 3. **NPM Package (📦 READY)**
@@ -25,16 +26,16 @@ go install github.com/Shubhpreet-Rana/codegenius@latest
 npm install -g codegenius-cli
 ```
 - **Package Name**: `codegenius-cli`
-- **Version**: v1.1.1
+- **Version**: v1.1.2
 - **Status**: 📦 Built and ready to publish
-- **File**: `codegenius-cli-1.1.1.tgz` (107.6 MB)
+- **File**: `codegenius-cli-1.1.2.tgz`
 - **Next Step**: Run `npm publish` to deploy
 
 #### 4. **Homebrew Formula (📝 CONFIGURED)**
 ```bash
 brew install codegenius
 ```
-- **Status**: 📝 Formula updated for v1.1.1
+- **Status**: 📝 Formula updated for v1.1.2
 - **Repository**: Updated to point to correct GitHub repo
 - **Next Steps**: 
   - Create GitHub release with binaries
@@ -52,12 +53,18 @@ brew install codegenius
 
 ### **Package Manager Updates**
 - ✅ **install.sh**: Updated repository paths and improved verification
-- ✅ **package.json**: Updated to v1.1.1 with correct repository URLs
+- ✅ **package.json**: Updated to v1.1.2 with correct repository URLs
 - ✅ **NPM install script**: Updated repository configuration
-- ✅ **Homebrew formula**: Updated to v1.1.1 with correct URLs
+- ✅ **Homebrew formula**: Updated to v1.1.2 with correct URLs
+
+### **Installation Improvements (v1.1.2)**
+- ✅ **Automatic PATH setup**: Installer now adds Go bin to shell profile
+- ✅ **Shell detection**: Supports zsh, bash, fish, and generic profiles
+- ✅ **Non-interactive mode**: Works seamlessly with `curl | bash`
+- ✅ **Global access**: CodeGenius available immediately after install
 
 ### **Version Management**
-- ✅ Created and pushed tag `v1.1.1`
+- ✅ Created and pushed tag `v1.1.2`
 - ✅ Go modules now work with `@latest`
 - ✅ All package managers reference correct repository
 

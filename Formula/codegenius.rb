@@ -1,7 +1,7 @@
 class Codegenius < Formula
   desc "AI-powered Git commit message generator and code reviewer with beautiful terminal UI"
   homepage "https://github.com/Shubhpreet-Rana/codegenius"
-  version "1.1.1"
+  version "1.1.2"
   license "MIT"
 
   if OS.mac? && Hardware::CPU.intel?
@@ -24,7 +24,10 @@ class Codegenius < Formula
 
   def caveats
     <<~EOS
-      🤖 CodeGenius CLI installed successfully!
+      🤖 CodeGenius CLI installed successfully via Homebrew!
+
+      ✅ CodeGenius is ready to use globally!
+      🚀 Try it now: codegenius --tui
 
       📋 Next steps:
       1. Get your Gemini API key: https://makersuite.google.com/app/apikey
