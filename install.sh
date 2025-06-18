@@ -105,12 +105,8 @@ check_go() {
     command -v go >/dev/null 2>&1
 }
 
-# Install via Go
-install_via_go() {
-    print_step "Installing CodeGenius via Go..."
-    
-    go install github.com/${REPO_OWNER}/${REPO_NAME}@latest
-    
+# Add Go bin to PATH in shell profile
+add_to_path() {
     local gobin=""
     if [ -n "$GOBIN" ]; then
         gobin="$GOBIN"
@@ -120,13 +116,75 @@ install_via_go() {
         gobin="$(go env GOPATH)/bin"
     fi
     
+    # Detect shell and corresponding profile file
+    local shell_profile=""
+    local shell_name=$(basename "$SHELL")
+    
+    case $shell_name in
+        zsh)
+            shell_profile="$HOME/.zshrc"
+            ;;
+        bash)
+            if [ -f "$HOME/.bash_profile" ]; then
+                shell_profile="$HOME/.bash_profile"
+            else
+                shell_profile="$HOME/.bashrc"
+            fi
+            ;;
+        fish)
+            shell_profile="$HOME/.config/fish/config.fish"
+            ;;
+        *)
+            shell_profile="$HOME/.profile"
+            ;;
+    esac
+    
+    # Check if Go bin is already in PATH
     if [[ ":$PATH:" == *":$gobin:"* ]]; then
-        print_success "CodeGenius installed successfully via Go!"
-    else
-        print_warning "Go binary path ($gobin) is not in your PATH."
-        print_step "Add this to your shell profile (~/.bashrc, ~/.zshrc):"
-        echo "export PATH=\"$gobin:\$PATH\""
+        print_step "Go bin directory already in PATH"
+        return 0
     fi
+    
+    # Check if it's already added to the profile
+    if [ -f "$shell_profile" ] && grep -q "$gobin" "$shell_profile"; then
+        print_step "Go bin directory already configured in $shell_profile"
+        print_step "Run: source $shell_profile (or restart your terminal)"
+        return 0
+    fi
+    
+    # Add to shell profile
+    print_step "Adding Go bin directory to PATH in $shell_profile..."
+    
+    # Create the directory if it doesn't exist (for fish)
+    mkdir -p "$(dirname "$shell_profile")"
+    
+    # Add the export line
+    if [ "$shell_name" = "fish" ]; then
+        echo "set -gx PATH $gobin \$PATH" >> "$shell_profile"
+    else
+        echo "" >> "$shell_profile"
+        echo "# CodeGenius CLI - Go bin directory" >> "$shell_profile"
+        echo "export PATH=\"$gobin:\$PATH\"" >> "$shell_profile"
+    fi
+    
+    print_success "Added Go bin directory to $shell_profile"
+    print_step "Run: source $shell_profile (or restart your terminal)"
+    
+    # Also add to current session
+    export PATH="$gobin:$PATH"
+    print_step "Go bin directory added to current session PATH"
+}
+
+# Install via Go
+install_via_go() {
+    print_step "Installing CodeGenius via Go..."
+    
+    go install github.com/${REPO_OWNER}/${REPO_NAME}@latest
+    
+    # Add to PATH automatically
+    add_to_path
+    
+    print_success "CodeGenius installed successfully via Go!"
 }
 
 # Install via binary download
@@ -219,6 +277,28 @@ verify_installation() {
 show_setup_instructions() {
     echo ""
     echo -e "${GREEN}🎉 CodeGenius CLI is now installed!${NC}"
+    echo ""
+    
+    # Test if codegenius is accessible
+    if command -v "$BINARY_NAME" >/dev/null 2>&1; then
+        echo -e "${GREEN}✅ CodeGenius is ready to use globally!${NC}"
+        echo -e "${BLUE}🚀 Try it now:${NC} ${YELLOW}codegenius --tui${NC}"
+    else
+        local gobin=""
+        if command -v go >/dev/null 2>&1; then
+            if [ -n "$GOBIN" ]; then
+                gobin="$GOBIN"
+            elif [ -n "$GOPATH" ]; then
+                gobin="$GOPATH/bin"
+            else
+                gobin="$(go env GOPATH)/bin"
+            fi
+            echo -e "${YELLOW}⚠️  Restart your terminal or run:${NC}"
+            echo -e "   ${YELLOW}source ~/.zshrc${NC} (or your shell profile)"
+            echo -e "${BLUE}🚀 Then try:${NC} ${YELLOW}codegenius --tui${NC}"
+        fi
+    fi
+    
     echo ""
     echo -e "${BLUE}📋 Next Steps:${NC}"
     echo "1. Get your Gemini API key: https://makersuite.google.com/app/apikey"
