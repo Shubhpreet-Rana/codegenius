@@ -10,48 +10,13 @@ const path = require('path');
 const fs = require('fs');
 const os = require('os');
 
-// Determine the binary name based on platform
-function getBinaryName() {
-    const platform = os.platform();
-    const arch = os.arch();
-    
-    let platformName;
-    switch (platform) {
-        case 'darwin':
-            platformName = 'darwin';
-            break;
-        case 'linux':
-            platformName = 'linux';
-            break;
-        case 'win32':
-            platformName = 'windows';
-            break;
-        default:
-            console.error(`❌ Unsupported platform: ${platform}`);
-            process.exit(1);
-    }
-    
-    let archName;
-    switch (arch) {
-        case 'x64':
-            archName = 'amd64';
-            break;
-        case 'arm64':
-            archName = 'arm64';
-            break;
-        default:
-            console.error(`❌ Unsupported architecture: ${arch}`);
-            process.exit(1);
-    }
-    
-    const extension = platform === 'win32' ? '.exe' : '';
-    return `codegenius-${platformName}-${archName}${extension}`;
-}
-
 // Get the path to the binary
 function getBinaryPath() {
-    const binaryName = getBinaryName();
-    const binaryPath = path.join(__dirname, '..', 'lib', 'bin', binaryName);
+    const platform = os.platform();
+    
+    // Use the single unified binary name
+    const binaryName = platform === 'win32' ? 'codegenius-windows-amd64.exe' : 'codegenius';
+    const binaryPath = path.join(__dirname, binaryName);
     
     if (!fs.existsSync(binaryPath)) {
         console.error(`❌ CodeGenius binary not found at: ${binaryPath}`);
@@ -96,7 +61,7 @@ function launchCodeGenius() {
     });
 }
 
-// Check if this is a help request
+// Check if this is a help request and show wrapper info
 if (process.argv.includes('--help') || process.argv.includes('-h')) {
     console.log('🤖 CodeGenius CLI - NPM Wrapper');
     console.log('');
@@ -109,7 +74,7 @@ if (process.argv.includes('--help') || process.argv.includes('-h')) {
     console.log('  codegenius --help      # Show CodeGenius help');
     console.log('');
     console.log('For full documentation, visit:');
-    console.log('https://github.com/yourusername/codegenius#readme');
+    console.log('https://github.com/Shubhpreet-Rana/codegenius#readme');
     console.log('');
 }
 
